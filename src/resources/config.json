@@ -1,7 +1,7 @@
 [
     {
         "layer": "overlay",
-        "border-color": [
+        "border_color": [
             "255",
             "192",
             "203"

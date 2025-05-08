@@ -52,6 +52,7 @@ pub fn events(app: gtk::Application, builder: Builder) -> Result<()> {
                     problem = "The \"to\" value is empty, can't continue!";
                 }
                 create_popover(msg, problem, builder.clone()).expect("Failed to create Popover.");
+                fs::remove_file(lock).expect("Failed to remove lock file.");
             } else {
                 let from = string_to_i64(from_entry.text().to_string(), from_error.clone());
                 let mut to = string_to_i64(to_entry.text().to_string(), to_error.clone());
@@ -74,6 +75,7 @@ pub fn events(app: gtk::Application, builder: Builder) -> Result<()> {
                     }
                     create_popover(msg, problem.as_str(), builder.clone())
                         .expect("Failed to create Popover.");
+                    fs::remove_file(lock).expect("Failed to remove lock file.");
                 } else {
                     if from >= to {
                         to = from + 1;

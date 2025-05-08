@@ -1,0 +1,30 @@
+@define-color border rgb(255, 192, 203);
+
+window {
+    font-size: larger;
+    border-radius: 20px;
+    outline: 0px solid @border;
+    outline-offset: -2px;
+    transition: outline-width 200ms ease-in-out;
+}
+
+window:hover {
+    outline-width: 2px;
+}
+
+window:active {
+    outline-width: 2px;
+}
+
+.result-label {
+    font-size: 40px;
+}
+
+.popup_title {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.popup_vbox {
+    margin: 20px;
+}

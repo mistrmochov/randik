@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<interface domain="com.randik.com">
+    <requires lib="gtk" version="4.0" />
+    <object class="GtkApplicationWindow" id="window">
+        <property name="title">Randik</property>
+        <property name="default-height">250</property>
+        <property name="default-width">350</property>
+        <child>
+            <object class="GtkBox">
+                <style>
+                    <class name="main-box" />
+                </style>
+                <property name="orientation">vertical</property>
+                <property name="spacing">35</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <child>
+                    <object class="GtkLabel" id="result-label">
+                        <property name="label"></property>
+                        <style>
+                            <class name="result-label"></class>
+                        </style>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkBox">
+                        <style>
+                            <class name="num-box" />
+                        </style>
+                        <property name="orientation">horizontal</property>
+                        <property name="spacing">15</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <child>
+                            <object class="GtkEntry" id="from-entry">
+                                <property name="placeholder-text"></property>
+                                <property name="width_chars">5</property>
+                                <property name="max_width_chars">5</property>
+                                <property name="valign">center</property>
+                                <property name="halign">center</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="to-label">
+                                <style>
+                                    <class name="accent" />
+                                    <class name="to-label" />
+                                </style>
+                                <property name="label">to</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkEntry" id="to-entry">
+                                <property name="placeholder-text"></property>
+                                <property name="width_chars">5</property>
+                                <property name="max_width_chars">5</property>
+                                <property name="valign">center</property>
+                                <property name="halign">center</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkBox">
+                        <style>
+                            <class name="but-box" />
+                        </style>
+                        <property name="orientation">horizontal</property>
+                        <property name="spacing">50</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <child>
+                            <object class="GtkButton" id="gen-button">
+                                <style>
+                                    <class name="button" />
+                                    <class name="accent" />
+                                </style>
+                                <property name="label">Generate</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="exit-button">
+                                <style>
+                                    <class name="button" />
+                                    <class name="destructive-action" />
+                                </style>
+                                <property name="label">Exit</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </object>
+</interface>

@@ -9,7 +9,6 @@ use dirs::home_dir;
 use gtk4::{self as gtk, CssProvider, gdk::Display, prelude::*};
 use std::fs::{self, File};
 use std::io;
-use std::path::PathBuf;
 
 fn files_init() -> io::Result<()> {
     if let Some(home) = home_dir() {
@@ -17,7 +16,7 @@ fn files_init() -> io::Result<()> {
         let conf = randik.join("config.json");
         if !randik.exists() || !randik.is_dir() {
             println!("Creating {} directory.", randik.to_string_lossy());
-            if !PathBuf::from(".config").exists() {
+            if !home.join(".config").exists() {
                 fs::create_dir_all(randik)?;
             } else {
                 fs::create_dir(randik)?;
